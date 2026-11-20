@@ -460,151 +460,226 @@ body {
 
 
 
-/* IRON CORE FITNESS PROJECT */
 
-.gym-visual {
-    background:
-        radial-gradient(circle at 75% 35%, rgba(99, 55, 255, .25), transparent 45%),
-        linear-gradient(135deg, #070b1c, #10152c, #171039);
-    position: relative;
-    overflow: hidden;
-}
 
-.gym-preview {
-    width: 82%;
-    background: #090e20;
-    border: 1px solid rgba(111, 83, 255, .55);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, .5),
-                0 0 25px rgba(99, 55, 255, .15);
-    transform: perspective(900px) rotateY(5deg);
-    transition: transform .4s ease, box-shadow .4s ease;
-}
+/* ============================================================
+   NOVABANK PROJECT
+============================================================ */
 
-.project-card:hover .gym-preview {
-    transform: perspective(900px) rotateY(0deg) translateY(-5px);
-    box-shadow: 0 25px 55px rgba(0, 0, 0, .6),
-                0 0 30px rgba(99, 55, 255, .25);
-}
-
-.gym-topbar {
-    padding: 13px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #11182d;
-    color: #ddd;
-    font-size: 8px;
-}
-
-.gym-topbar strong {
-    color: #a78bfa;
-    font-size: 14px;
-}
-
-.gym-hero-preview {
-    padding: 35px 20px;
-    background: linear-gradient(110deg, #10172d, #19133b);
-}
-
-.gym-hero-preview > span {
-    color: #a78bfa;
-    font-size: 9px;
-    letter-spacing: 2px;
-}
-
-.gym-hero-preview h2 {
-    color: white;
-    font-size: clamp(19px, 2.5vw, 30px);
-    line-height: 1.15;
-    margin: 13px 0;
-}
-
-.gym-hero-preview p {
-    color: #aeb8d0;
-    font-size: 9px;
-}
-
-.gym-button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 9px 17px;
-    background: linear-gradient(135deg, #6246ea, #9333ea);
-    color: white;
-    font-size: 9px;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.gym-bottom {
-    display: flex;
-    justify-content: space-around;
-    padding: 12px 5px;
-    color: #a78bfa;
-    background: #11182d;
-    font-size: 8px;
-}
-
-.gym-label {
-    position: absolute;
-    bottom: 15px;
-    left: 18px;
-    color: #a78bfa;
-    font-size: 9px;
-    letter-spacing: 1px;
-    font-family: var(--mono);
-}
-
-@media(max-width: 560px) {
-    .gym-preview {
-        width: 88%;
-    }
-
-    .gym-hero-preview {
-        padding: 25px 14px;
-    }
-}
-
-/* GYM PROJECT - LAYOUT REFINEMENT */
-
-.gym-visual {
+.novabank-visual {
+    background: #eef4fc;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 24px;
-    box-sizing: border-box;
+    padding: 18px;
+    overflow: hidden;
 }
 
-.gym-preview {
-    width: 82%;
-    max-width: 620px;
-    box-sizing: border-box;
-    transform: perspective(900px) rotateY(3deg) scale(.94);
-}
-
-.gym-hero-preview {
-    padding: 25px 18px;
-}
-
-.gym-topbar {
-    padding: 10px 13px;
-}
-
-.gym-bottom {
-    padding: 10px 5px;
-}
-
-/* Remove the overlapping bottom label */
-.gym-label {
-    display: none;
+.novabank-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(15, 40, 75, 0.15);
 }
 
 @media (max-width: 800px) {
-    .gym-visual {
-        padding: 25px 15px;
+    .novabank-visual {
+        padding: 12px;
     }
 
-    .gym-preview {
-        width: 90%;
+    .novabank-screenshot {
+        max-height: 280px;
+    }
+}
+
+/* ============================================================
+   IRON CORE FITNESS - PROJECT SCREENSHOT
+============================================================ */
+
+.gym-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 22px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 70, 70, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #151515, #252525);
+}
+
+/* Actual website screenshot */
+
+.gym-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Hover animation */
+
+.gym-visual:hover .gym-screenshot {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive design */
+
+@media (max-width: 800px) {
+
+    .gym-visual {
+        min-height: 240px;
+        padding: 14px;
+    }
+
+    .gym-screenshot {
+        max-height: 280px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .gym-visual {
+        min-height: 200px;
+        padding: 10px;
+    }
+
+    .gym-screenshot {
+        max-height: 230px;
+        border-radius: 7px;
+    }
+
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gym-screenshot {
+        transition: none;
+    }
+
+    .gym-visual:hover .gym-screenshot {
         transform: none;
     }
+
+}
+
+/* ============================================================
+   IYYAPAN NET CITY - PROJECT SCREENSHOT
+============================================================ */
+
+.iyyapan-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 22px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(42, 120, 255, 0.18),
+            transparent 50%
+        ),
+        linear-gradient(135deg, #080e1c, #101b30);
+}
+
+.iyyapan-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+
+.iyyapan-visual:hover .iyyapan-screenshot {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 800px) {
+
+    .iyyapan-visual {
+        min-height: 240px;
+        padding: 14px;
+    }
+
+    .iyyapan-screenshot {
+        max-height: 280px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .iyyapan-visual {
+        min-height: 200px;
+        padding: 10px;
+    }
+
+    .iyyapan-screenshot {
+        max-height: 230px;
+        border-radius: 7px;
+    }
+
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .iyyapan-screenshot {
+        transition: none;
+    }
+
+    .iyyapan-visual:hover .iyyapan-screenshot {
+        transform: none;
+    }
+
 }
