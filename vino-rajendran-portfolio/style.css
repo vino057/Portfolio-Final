@@ -683,3 +683,227 @@ body {
     }
 
 }
+
+/* ============================================================
+   PROJECT SECTION - LAYOUT
+============================================================ */
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(17, 26, 45, 0.65);
+}
+
+.project-card.project-reverse .project-visual {
+    order: 2;
+}
+
+.project-card.project-reverse .project-info {
+    order: 1;
+}
+
+.project-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 320px;
+    padding: 22px;
+    overflow: hidden;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 34px;
+}
+
+.project-info h3 {
+    margin: 16px 0;
+}
+
+.project-info p {
+    line-height: 1.8;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+
+/* ============================================================
+   WEBSITE SCREENSHOT PROJECTS
+============================================================ */
+
+.iyyapan-visual {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(42, 120, 255, 0.18),
+            transparent 50%
+        ),
+        linear-gradient(135deg, #080e1c, #101b30);
+}
+
+.gym-visual {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 70, 70, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #151515, #252525);
+}
+
+.novabank-visual {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(42, 120, 255, 0.16),
+            transparent 50%
+        ),
+        linear-gradient(135deg, #eaf1fb, #dce8f8);
+}
+
+
+/* Screenshot image shared by all three cards */
+
+.project-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-visual:hover .project-screenshot {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Screenshot label */
+
+.project-visual .visual-chip {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    z-index: 2;
+}
+
+
+/* ============================================================
+   RESPONSIVE PROJECT CARDS
+============================================================ */
+
+@media (max-width: 800px) {
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card.project-reverse .project-visual,
+    .project-card.project-reverse .project-info {
+        order: initial;
+    }
+
+    .project-visual {
+        min-height: 260px;
+        padding: 16px;
+    }
+
+    .project-info {
+        padding: 26px;
+    }
+
+    .project-screenshot {
+        max-height: 300px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .projects-list {
+        gap: 22px;
+    }
+
+    .project-card {
+        border-radius: 10px;
+    }
+
+    .project-visual {
+        min-height: 210px;
+        padding: 12px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-screenshot {
+        max-height: 240px;
+        border-radius: 7px;
+    }
+
+    .project-meta {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-screenshot {
+        transition: none;
+    }
+
+    .project-visual:hover .project-screenshot {
+        transform: none;
+    }
+
+}
